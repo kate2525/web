@@ -1,0 +1,228 @@
+@font-face {
+    font-family: astra; /* Гарнитура шрифта */
+    src: url(fonts/astra.ttf); /* Путь к файлу со шрифтом */
+}
+@font-face {
+    font-family: KaushanScript; /* Гарнитура шрифта */
+    src: url(fonts/KaushanScript.otf); /* Путь к файлу со шрифтом */
+}
+#list_here{
+    background: #eeebea;
+}
+.left_list2 {
+   float: left;
+    width: 10%;
+    font-size: 2em;
+    margin-left: 200px;
+    list-style-type: none;
+    text-align:center;
+    padding-top: 10px;
+    text-transform:uppercase;
+
+}
+.left_list2{
+    padding-top: 20px;
+}
+.left_list2 a{
+    color: #2C3E50;
+    font-family: KaushanScript, cursive;
+}
+.main_list_li {
+    display: flex;
+    justify-content: left;
+    padding-top: 20px;
+    clear: both;
+    width: 48%;
+}
+
+.main_list2 p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 0 5px 35px;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+.main_list2 li, .main_list3 li, .main_list4 li, .main_list5 li{
+    display: block;
+
+}
+.main_list2 li a, .main_list3 li a, .main_list4 li a, .main_list5 li a {
+    font-size: 1.3em;
+    clear:both;
+    display: block;
+    color: #c7bdb9;
+    text-align: left;
+    padding-left: 15px;
+    font-family: "Comic Sans MS", cursive;
+}
+
+.main_list3 p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 0 5px 35px;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+.main_list4 p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 0 5px 35px;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+.main_list5 p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 0 5px 35px;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+
+/*right*/
+.righrt_li{
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+}
+.main_li{
+    clear: both;
+    display: flex;
+    justify-content: space-between;
+}
+.right_list2 {
+    clear: both;
+    float: right;
+    width: 13%;
+    font-size: 2em;
+    margin-right: 200px;
+    list-style-type: none;
+    text-align:center;
+    text-transform:uppercase;
+    color: #2C3E50;
+    font-family: KaushanScript, cursive;
+}
+.right_list2{
+    padding-top: 20px;
+}
+.right_list2 a{
+    color: #2C3E50;
+}
+.main_list_li_right {
+    display: flex;
+    float: right;
+    padding-top: 20px;
+    clear: both;
+    width: 48%;
+
+}
+.main_list2_right p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 35px 5px 0;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+.main_list2_right li, .main_list3_right li, .main_list4_right li, .main_list5_right li{
+    display: block;
+
+}
+.main_list2_right li a, .main_list3_right li a, .main_list4_right li a, .main_list5_right li a {
+    font-size: 1.3em;
+    clear:both;
+    display: block;
+    color: #c7bdb9;
+    text-align: left;
+    font-family: "Comic Sans MS", cursive;
+}
+
+
+.main_list3_right p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 35px 5px 0;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+.main_list4_right p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 35px 5px 0;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+.main_list5_right p a{
+    text-transform:uppercase;
+    display: block;
+    clear:both;
+    float: left;
+    font-size: 1.6em;
+    padding: 20px 70px 5px 0;
+    color: #492080;
+    text-align: center;
+    font-family: astra, cursive;
+}
+.line2{
+    width: 20%;
+    border-bottom: 10px solid #f8fff8;
+    margin: 0 auto;
+    position: relative;
+    top: 5px;
+}
+@media only screen and (max-width: 920px) {
+    .left_list2,.right_list2 {
+        margin: auto;
+    }
+    .main_list_li{
+        display: block;
+        float: left;
+        width: 48%;
+    }
+    .main_list_li_right {
+        display: block;
+        float: left;
+        width: 48%;
+    }
+    .main_list2_right, .main_list3_right, .main_list4_right, .main_list5_right{
+        padding-left: 30px;
+    }
+    .main_list3{
+        pading-left:15px;
+    }
+    .main_list4{
+        pading-left:5px;
+    }
+    .main_list5{
+        pading-left:10px;
+    }
+
+}
+
+

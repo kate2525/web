@@ -1,0 +1,218 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IT-курсы</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/slider.css">
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".slider").each(function() {
+
+                var repeats = 5, // кількість повторювань автоматичного прокручування
+                        interval = 3, // інтервал в секундах
+                        repeat = true, // чи треба автоматично прокручувати (true/false)
+                        slider = $(this),
+                        repeatCount = 0,
+                        elements = $(slider).find("li").length;
+
+                $(slider)
+                        .append("<div class='nav'></div>")
+                        .find("li").each(function() {
+                            $(slider).find(".nav").append("<span data-slide='"+$(this).index()+"'></span>");
+                            $(this).attr("data-slide", $(this).index());
+                        })
+                        .end()
+                        .find("span").first().addClass("on");
+
+                // add timeout
+
+                if (repeat) {
+                    repeat = setInterval(function() {
+//                        if (repeatCount >= repeats - 1) {
+//                            window.clearInterval(repeat);
+//                        }
+
+                        var index = $(slider).find('.on').data("slide"),
+                                nextIndex = index + 1 < elements ? index + 1 : 0;
+
+                        sliderJS(nextIndex, slider);
+
+                        repeatCount += 1;
+                    }, interval * 1000);
+                }
+
+            });				
+			
+        });
+
+        function sliderJS(index, slider) { // slide
+            var ul = $(slider).find("ul"),
+                    bl = $(slider).find("li[data-slide=" + index + "]"),
+                    step = $(bl).width();
+
+            $(slider)
+                    .find("span").removeClass("on")
+                    .end()
+                    .find("span[data-slide=" + index + "]").addClass("on");
+
+            $(ul).animate({
+                marginLeft: "-" + step * index
+            }, 500);
+        }
+
+        $(document).on("click", ".slider .nav span", function(e) { // slider click navigate
+            e.preventDefault();
+            var slider = $(this).closest(".slider"),
+                    index = $(this).data("slide");
+
+            sliderJS(index, slider);
+        });
+
+    </script>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+</head>
+<body>
+<div id="header">
+   <p class="image">
+    <img src="images/logo.png" class="three"/>
+    <img src="images/logo2.png" class="one"/>
+       </p>
+	</div>
+<div class="container-fluid">
+<div class="row">
+<div class="navbar navbar-default">
+	<div class="container">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#eee">
+			<span class="sr-only">open navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+	</div>
+		<div class="collapse navbar-collapse" id="eee">
+			<ul class="nav navbar-nav">
+			<li><a href="#">Уроки PHP</a></li>
+			<li><a href="#">Уроки Joomla</a></li>
+			<li><a href="#">Уроки jQuery</a></li>
+			<li><a href="#">Уроки JavaScript</a></li>
+			<li><a href="#">Уроки CSS</a></li>
+			<li><a href="lesson_html.html">Уроки HTML</a></li>
+			 </ul>
+		</div>
+</div>
+</div>
+</div>
+</div>
+	<div id="slider_under">
+    <div class="slider">
+        <ul>
+            <li><img src="images/1.jpg" alt=""></li>
+            <li><img src="images/2.jpg" alt=""></li>
+            <li><img src="images/3.jpg" alt=""></li>
+			<li><img src="images/4.png" alt=""></li>
+        </ul>
+    </div>
+    </div>
+
+<p id="text">Добро пожаловать на сайт разработки под Веб <span class="colortext">&laquo;HelloWorld&raquo; </span>!</p>
+<div class="pic"><img src="images/break.png"/></div>
+
+<div class="row">
+	<div class="col-xs-6 col-sm-4">
+		<div class=" gl glyphicon">
+			<center><p><a href="#" target="_blank">Как выровнять слой по центру веб-страницы?</a></p>
+			<img src="images/img1.png" alt="Фотография 1" width="260" height="140" img style="border: 2px ridge #2e9419">
+			<div class="text_pos"><p>Когда речь идет об использовании слоев, то для выравнивания в нашем распоряжении имеется несколько способов — с помощью отступов, через позиционирование, а также используя атрибут align тега.</p></div>
+			<a href="#1" class="btn btn-success">Подробнее</a></center>
+		</div>
+	</div>
+	<div class="clearfix visible-xs"></div>
+	<div class="col-xs-6 col-sm-4">
+		<div class=" gl glyphicon">
+			<center><p><a href="#2" target="_blank">Функции,объекты и массивы JavaScript</a></p>
+				<img src="images/img2.png" alt="Фотография 1" width="260" height="140" img style="border: 2px ridge #2e9419">
+				<div class="text_pos"><p>Объект в javascript представляет собой обычный ассоциативный массив или, иначе говоря, "хэш". Он хранит любые соответствия "ключ => значение" и имеет несколько стандартных методов.</p></div>
+				<a href="#2" class="btn btn-success">Подробнее</a></center>
+		</div>
+	</div>
+	<div class="clearfix visible-xs"></div>
+	<div class="col-xs-6 col-sm-4">
+		<div class=" gl glyphicon">
+			<center><p><a href="#3" target="_blank">Полезные советы по изучению PHP</a></p>
+				<img src="images/img3.png" alt="Фотография 1" width="260" height="140" img style="border: 2px ridge #2e9419">
+				<div class="text_pos"><p>В данной статье я хочу Вам дать 15 полезных советов php. Все советы взяты из моего личного опыта. Поэтому буду рад Вашим комментариям и критическим замечаниям как оценка моих трудов.</p></div>
+				<a href="#3" class="btn btn-success">Подробнее</a></center>
+		</div>
+	</div>
+	</div>
+
+
+
+<div class="row">
+	<div class="col-xs-6 col-sm-4">
+			<div class=" gl glyphicon2">
+				<p><a href="#1" target="_blank">Поделиться</a></p>
+					<ul class="link">
+						<li><div class="link1" data-title="Перейти в facebook"><a href="#facebook" target="_blank"><img src="images/l1.png" width="50" height="50"></a></div></li>
+						<li><div class="link1" data-title="Перейти в vk"><a href="#vk" target="_blank"><img src="images/l2.png" width="50" height="50"></a></div></li>
+						<li><div class="link1" data-title="Перейти в linkedln"><a href="#linkedln" target="_blank"><img src="images/l3.png" width="50" height="50"></a></div></li>
+						<li><div class="link1" data-title="Перейти в twitter"><a href="#twitter" target="_blank"><img src="images/l4.png" width="50" height="50"></a></div></li>
+					</ul>
+		</div>
+			</div>
+
+	<div class="clearfix visible-xs"></div>
+		<div class="col-xs-6 col-sm-4">
+			<div class=" gl glyphicon2">
+				<p><a href="#2" target="_blank">Поделиться</a></p>
+				<div class="link">
+				<form action="form.php" method="post">
+					<label for="name">Name:</label>
+					<input type="text" id="name" name="name" />
+					<label for="mail">E-mail:</label>
+					<input type="email" id="mail" name="mail" />
+					<label for="msg">Message:</label>
+					<textarea id="msg" name="message"></textarea>
+					<div class="but"><input type="submit" value="Submit"/></div>
+				</form>
+					</div>
+			</div>
+		</div>
+
+	<div class="clearfix visible-xs"></div>
+		<div class="col-xs-6 col-sm-4">
+			<div class=" gl glyphicon2">
+				<p><a href="#3" target="_blank">Смотрите также</a></p>
+				<div class="link3">
+					<li><a href="#l" target="_blank"><p><img src="images/link1.png" width="50" height="50" align="left" vspace="5" hspace="7">Свойство animation-delay устанавливает время ожидания перед воспроизведением анимации. Значение 0s или 0ms, которое установлено по умолчанию, запускает анимацию сразу же, как только она применяется к элементу.</a></p></li>
+					<div class="omg"><img src="images/omg.png" width="260" height="1"></div>
+					<li><a href="#l2" target="_blank"><p><img src="images/link2.png" width="50" height="50" align="left" vspace="5" hspace="7">Универсальное свойство border позволяет одновременно установить толщину, стиль и цвет границы вокруг элемента. Значения могут идти в любом порядке, разделяясь пробелом, браузер сам определит, какое из них соответствует нужному свойству. Для установки границы только на определенных сторонах элемента, воспользуйтесь свойствами border-top, border-bottom, border-left, border-right.</a></p></li>
+					<div class="omg"><img src="images/omg.png" width="260" height="1"></div>
+					<li><a href="#l3" target="_blank"><p><img src="images/link3.png" width="50" height="50" align="left" vspace="5" hspace="7">float: left | right | none | inherit. Определяет, по какой стороне будет выравниваться элемент, при этом остальные элементы будут обтекать его с других сторон.</a></p></li>
+					<div class="omg"><img src="images/omg.png" width="260" height="1"></div>
+				</div>
+			</div>
+	</div>
+	</div>
+
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+		<div class="end">
+		<div class="greey"></div>
+		</div>
+		</div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>
